@@ -1,3 +1,4 @@
+/* Initializations */
 :root {
     --colorBackground: #f3eae3;
     --colorCardMain: #ffffff;
@@ -6,6 +7,8 @@
     --colorTextTertiary: #adb0b9;
     --colorBtnPrimary: var(--colorTextSecondary);
     --colorBtnHover: #1a4031;
+    --fontPrimary: 'Fraunces', serif;
+    --fontSecondary: 'Montserrat', sans-serif;
 }
 
 body {
@@ -13,51 +16,137 @@ body {
     padding: 0px;
 }
 
-.background {
-    background-color: var(--colorBackground);
-}
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Montserrat:wght@500;600;700&display=swap');
+
+/* Web Design */
+.bgContainer {
     width: 100vw;
     height: 100vh;
-}
-
-.card {
-    display: flex;
-    height: 620px;
-    width: 412px;
-}
-
-.img {
-    object-fit: contain;
-}
-
-
-
-.text {
-    background-color: var(--colorCardMain);
-    flex-direction: column;
-    padding: 0px 20px;
-    color: var(--colorTextTertiary);
-}
-
-.price {
+    background-color: var(--colorBackground);
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.cardContainer {
+    width: 600px;
+    height: 450px;
+    display: flex;
+}
+
+
+.cardImg {
+    display: flex;
+    width: 300px;
+    height: 450px;
+    /* object-fit: cover; */
+}
+
+.cardImg>img {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.cardText {
+    background-color: var(--colorCardMain);
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 450px;
+    padding: 0px 30px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.cardText>* {
+    display: flex;
+    flex-direction: column;
+}
+
+.categoryContainer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--colorTextTertiary);
+    font-family: var(--fontSecondary);
+    letter-spacing: 4px;
+}
+
+.headerContainer {
+    margin-top: 15px;
+    color: var(--colorTextPrimary);
+    font-family: var(--fontPrimary);
+    font-weight: 900;
+    font-size: 34px;
+    letter-spacing: -1px;
+}
+
+.articleContainer {
+    margin-top: 15px;
+    font-family: var(--fontSecondary);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--colorTextTertiary);
+    letter-spacing: 1px;
+}
+
+
+.priceContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin: auto 0px -20px;
+    /* margin-top: auto 0px; */
+    font-family: var(--fontSecondary);
+}
+
+.priceContainer>* {
+    margin: auto 0px;
+}
+
+#discountPrice {
+    color: var(--colorTextSecondary);
+    font-size: 34px;
+    font-weight: 900;
+}
+
+#originalPrice {
+    color: var(--colorTextTertiary);
+    text-decoration: line-through;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.btnContainer {
+    margin-top: auto;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .btn {
-    margin-top: auto;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 0px;
+    border-radius: 10px;
     background-color: var(--colorBtnPrimary);
     color: var(--colorCardMain);
-    font-size: larger;
-    border: none;
-    padding: 20px 20px;
-    border-radius: 20px;
+    font-family: var(--fontSecondary);
+    font-size: 16px;
+    font-weight: 600;
+
 }
-.btn > img {
-    padding: 0px 10px;
+
+.btn:hover {
+    background-color: var(--colorBtnHover);
 }
+
+
+.btn>* {
+    padding: 0px 5px;
+}
+
+/* Mobile Design */
+@media only screen and (max-width: 768px) {}
